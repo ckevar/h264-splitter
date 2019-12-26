@@ -22,10 +22,10 @@ int main(int argc, const char *argv[]) {
 
 	DATA_TAIL = data + MAX_BUFFER_SIZE - 1;
 	head = data;
-	// int todebug = 0;
-	
+
 	while (1) {
 		int len = read(f, head, DATA_TAIL - head + 1);
+
 		if (len <= 0) {
 			close(nalUnit);
 			break;
