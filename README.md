@@ -35,7 +35,7 @@ it should be this:
 unsigned char starter[] = {0, 0, 1};
 ```
 ##### Notes: I'm still working in automatize this section.
-#### What Separator does my file has it?
+#### What Separator does my file have?
 ##### on Linux
 For that,I recomend you to use a binary reader such as xxd. In terminal type the following
 ```
@@ -56,6 +56,8 @@ we can conclude that that file is a **0001** header because it has *0000 0001*. 
 00000000: 0000 0167 42c0 1fda 0320 4df9 61000003  ...gB.... M.a...
 ```
 your file has a **001** header starters
+##### on Mc or Windows
+I recomend you to use a binary reader and check the first line
 
 ## Running the tests
 For running the splitter
