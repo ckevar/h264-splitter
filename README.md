@@ -7,8 +7,8 @@ Once this repository is cloned, type the following on terminal to create the exe
 ```
 make all
 ```
-**h264Splitter3** for *001* header starter NAL unit
-**h264Splitter4** for *0001* header starter NAL unit
+* **h264Splitter3** for *001* header starter NAL unit
+* **h264Splitter4** for *0001* header starter NAL unit
 
 ### Prerequisites
 
