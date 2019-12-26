@@ -1,5 +1,5 @@
 # h264-splitter
-An h264 file is composed by several [NAL units](http://gentlelogic.blogspot.com/2011/11/exploring-h264-part-2-h264-bitstream.html), and with this utility you can split that file into chunk files with one NAL each, with **001** and **0001** bytes header starter
+With this utility you can split a raw h264 file into chunk files with one NAL unit each.
 
 ## Getting Started
 Once this repository is cloned, type the following on terminal to create the executable h264Splitter3 and h264Splitter4 
@@ -7,10 +7,8 @@ Once this repository is cloned, type the following on terminal to create the exe
 ```
 make all
 ```
-### h264Splitter3
-This is for **001** bytes header starter NAL unit
-### h264Splitter4
-This is for **0001** bytes header starter NAL unit
+**h264Splitter3** for *001* header starter NAL unit
+**h264Splitter4** for *0001* header starter NAL unit
 
 ### Prerequisites
 
@@ -63,3 +61,6 @@ this will generate one file per each NAL unit contained in your h264 file, it wi
 <your_h264_file>.<last_NAL_unit>
 ```
 Remember that NAL units can be interpreted as "frames"
+
+## Acknowledgment
+* [Exploring H.264. Part 2: H.264 Bitstream format](http://gentlelogic.blogspot.com/2011/11/exploring-h264-part-2-h264-bitstream.html)
