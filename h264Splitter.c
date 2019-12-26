@@ -3,13 +3,21 @@
 #include <stdio.h>
 #include <string.h>
 
+#ifdef STARTER264NAL4
+int STARTER264NAL = 4;
+unsigned char starter[] = {0, 0, 0, 1};
+#else
+int STARTER264NAL = 3;
+unsigned char starter[] = {0, 0, 1};
+#endif
+
 int main(int argc, const char *argv[]) {
+	
 	int f = open(argv[1], O_RDONLY);
 	char fileName[50];
 	unsigned MAX_BUFFER_SIZE = 256;
 	unsigned char data[MAX_BUFFER_SIZE];
 	unsigned char tmp[MAX_BUFFER_SIZE];
-	unsigned char starter[] = {0, 0, 0, 1};
 	unsigned char *head;
 	unsigned char *tail;
 	unsigned char *DATA_TAIL;
@@ -32,11 +40,11 @@ int main(int argc, const char *argv[]) {
 		}
 
 		tail = data;
-		head -= 3;
+		head -= STARTER264NAL - 1;
 		sw = 0;
 
-		while(head < DATA_TAIL - 2) {
-			if(memcmp(head, starter, 4) == 0) {
+		while(head < DATA_TAIL - (STARTER264NAL - 2)) {
+			if(memcmp(head, starter, STARTER264NAL) == 0) {
 				sw = 1;
 				if (nalUnit > 0) {
 					write(nalUnit, tail, head - tail);
