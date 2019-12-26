@@ -1,3 +1,9 @@
+/**
+ * `h264Splitter.c`
+ *
+ * copyright (c) 2019 Christian Alvarado
+ */
+
 #include <unistd.h>
 #include <fcntl.h>
 #include <stdio.h>
