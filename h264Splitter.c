@@ -27,7 +27,6 @@ int main(int argc, const char *argv[]) {
 	unsigned char *head;
 	unsigned char *tail;
 	unsigned char *DATA_TAIL;
-
 	memset(data, 0, MAX_BUFFER_SIZE);
 
 	int sw = 0;
@@ -38,8 +37,9 @@ int main(int argc, const char *argv[]) {
 	head = data;
 
 	while (1) {
+		// printf("-------------------------------------\n");
 		int len = read(f, head, DATA_TAIL - head + 1);
-
+		// printf("len %d\n", len);
 		if (len <= 0) {
 			close(nalUnit);
 			break;
@@ -64,9 +64,12 @@ int main(int argc, const char *argv[]) {
 			}
 			head++;
 		}
+		
+		// printf("head %p, data %p, tail %p\n", head, data, tail);
 
-
-		if (sw == 0) {
+		// printf("sw status: %d\n", sw);
+		if (data == tail) {
+			// printf("since i didnt find, ill save\n");
 			write(nalUnit, tail, head - tail);
 			memcpy(tmp, head, DATA_TAIL - head + 1);
 			memcpy(data, tmp, DATA_TAIL - head + 1);
